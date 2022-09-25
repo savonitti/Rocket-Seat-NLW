@@ -70,8 +70,6 @@ body{
         line-height: 160%;
     }
 
-
-
     main{
         max-width: 580px;
         width: 90%;
@@ -80,31 +78,37 @@ body{
         display: flex;
         flex-direction: column;
         gap: 24px;
-
+        
+        
         margin-top: 32px;
     }
 
     section {
         color: white;
-
         line-height: 160%;
         background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
         padding-top: 4px;
         border-radius: 10px;
-    }
+        margin-bottom: 24px;
 
-    section div{
+        
+    }
+ 
+    section div { 
         background-color: #2a2634;
         padding: 32px;
         padding-top: 24px;
         border-radius: 8px;
+        
     }
 
     section h2 {
+       background-color: #2a2634;
        letter-spacing: -0.47px;
     }
     
     section p {
+        background-color: #2a2634;
         letter-spacing: -0.18px;
         color: #A1A1AA;
     }
@@ -117,32 +121,50 @@ body{
 
       }
 
-      section ul li{
-        transition: transform .3s;
-      }
-
-      section ul li:hover{
-        transform: scale(1.1);
-      }
-    
-    .games-list img{
+    .page1-games img {
         width: 90px;
         height: auto;
         border-radius: 8px;
     }
 
     .channel-list img{
-
         border-radius: 50%;
         width: 70px;
         border: 1px solid #443e54;
     }
 
+    .book-list img{
+        width: 70px; 
+        height: 100px;   
+        border: 1px solid #443e54;
+    }
+
+    main div button
+    {
+            display: flex;
+            padding: 0.5em 1.7em;
+            margin: auto;
+            border: 0.16em solid rgb(133, 40, 109);
+            border-radius: 2em;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            color: #000000;
+            text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+            text-align: center;
+            transition: all 0.2s;
+
+    }
     /* ANIMATION */
 
     header div {
         animation: fromTop .4s .7s backwards; /* animation fromTop fazer em .7s, delay de 1s, começar com as propriedades do from (backwards) */
         animation-delay: 1s;
+    }
+
+    main div button{
+        animation: changePage .7s 0.7s backwards;
     }
 
     main section {
@@ -158,6 +180,7 @@ body{
         animation-delay: 1.7s;    
     }
 
+
     @keyframes fromTop {
         from {
             opacity: 0;
@@ -169,6 +192,7 @@ body{
             transform: translateY(0);
         }
     }
+    
     @keyframes fromBottom{
         from {
             opacity: 0;
@@ -180,4 +204,35 @@ body{
             transform: translateX(0);
         }
     }    
-    
+
+    @keyframes changePage{
+        from {
+            opacity: 0;
+            transform: translateX(-240px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    section ul li{
+        transition: transform .3s;
+      }
+
+      section ul li:hover{
+        transform: scale(1.1);
+      }
+
+     main div button {
+        transition: transform .3s;
+     }
+     main div button:hover {
+        transform: scale(1.05);
+        color: rgb(0, 0, 0);
+        background-color: rgba(120, 33, 179, 0.699);
+        font-weight: bold;
+        
+    }
+
